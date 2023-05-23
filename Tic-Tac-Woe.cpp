@@ -55,7 +55,6 @@ int main()
 		}
 		displayBoard(board);
 		turn = opponent(turn);
-		cout << turn; 
 	}
 
 	announceWinner(winner(board), computer, human);
@@ -137,14 +136,17 @@ void displayBoard(const vector<char>& board) {
 char winner(const vector<char>& board) {
 
 	//all possible winning rows
-	const int WINNING_ROWS[8][3] = { (0, 1, 2),
-									 (3, 4, 5),
-									 (6, 7, 8),
-									 (0, 3, 6),
-									 (1, 4, 7),
-									 (2, 5, 8),
-									 (0, 4, 8),
-									 (2, 4, 6) };
+	const int WINNING_ROWS[8][3] = { 
+									{0, 1, 2},
+									{3, 4, 5},
+									{6, 7, 8},
+									{0, 3, 6},
+									{1, 4, 7},
+									{2, 5, 8},
+									{0, 4, 8},
+									{2, 4, 6} 
+	
+	};
 
 	const int TOTAL_ROWS = 8;
 
@@ -242,8 +244,8 @@ int computerMove(vector<char> board, char computer) {
 		}
 	}
 
-	cout << "It's my turn, I shall take square number " << move << endl;
-	return 0;
+	cout << "It's my turn, I shall take square number " << endl;
+	return move;
 
 }
 
